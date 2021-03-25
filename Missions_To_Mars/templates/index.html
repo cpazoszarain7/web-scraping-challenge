@@ -7,45 +7,52 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mission to Mars</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Style CSS -->
+  <link rel="stylesheet" href="/static/style.css">
 </head>
 
 <body>
   <div class="container-fluid">
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center"  style="background-image: url(https://blogs.nasa.gov/redplanetdispatch/wp-content/uploads/sites/279/2018/03/Mars-Website-banner-1024x309.jpg">
       <h1>Mission to Mars</h1>      
       <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
+    <div>
     <h2>Latest Mars News:</h2>
     <h3>{{ mars.news_title }}</h3>
     <h4>{{ mars.news_p }}</h4>
-    <div class='row'>
-        <div class='col-md-8'>
+    </div>
+    <div class='row form-group'>
+        <div class='col-md-6 text-center'>
             <h2>Featured Mars Image</h2>
-            <img src="{{ mars.featured_image_url }}" alt="Mars_Feature" width="530" height="500">
+            <img src="{{ mars.featured_image_url }}" alt="Mars_Feature" width="530" height="440">
         </div>
 
-        <div class='col-md-4'>
-            <h4>Mars Facts</h4>
+        <div class='col-md-6 justify-content-center'>
+          
+          <h2>Mars Facts</h2>
             {{mars.mars_facts | safe}}
             
         </div>
 
     </div>
+    <div class='row fluid text-center' id='section'>
     <h2>Mars Hemispheres</h2>
-    <div class='row'>
-        <div class= 'col-md-6'>
+    </div>
+    <div class='row' id='section'>
+        <div class= 'col-md-6 text-center'>
             <img src="{{ mars.hemisphere_image_url[0].img_url }}" alt="Mars_Feature" width="530" height="500">
             <h4>{{mars.hemisphere_image_url[0].title}}</h4>
         </div>
-        <div class= 'col-md-6'>
+        <div class= 'col-md-6 text-center'>
             <img src="{{ mars.hemisphere_image_url[1].img_url }}" alt="Mars_Feature" width="530" height="500">
             <h4>{{mars.hemisphere_image_url[1].title}}</h4>
         </div>
-        <div class= 'col-md-6'>
+        <div class= 'col-md-6 text-center'>
             <img src="{{ mars.hemisphere_image_url[2].img_url }}" alt="Mars_Feature" width="530" height="500">
             <h4>{{mars.hemisphere_image_url[2].title}}</h4>
         </div>
-        <div class= 'col-md-6'>
+        <div class= 'col-md-6 text-center'>
             <img src="{{ mars.hemisphere_image_url[3].img_url }}" alt="Mars_Feature" width="530" height="500">
             <h4>{{mars.hemisphere_image_url[3].title}}</h4>
         </div>
